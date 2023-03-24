@@ -149,8 +149,11 @@ form textarea {
 }
 
 #social-media {
-    text-align: center;
-    padding: 20px;
+    display: inline-block;
+    position:relative;
+    margin-top: 75px;
+    margin-bottom: 0px;
+    -webkit-transform:translate(0,0);
 }
 
 .socials {
@@ -179,8 +182,8 @@ form textarea {
 
 .socials span {
     color:#666;
-    position:absolute;
-    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    font-family:sans-serif;
     bottom:0;
     left:-25px;
     right:-25px;
