@@ -79,11 +79,14 @@ nav ul li a {
 }
 
 #contact {
-    text-align: center;
+    display: grid;
+    place-items: center;
+    /* text-align: center; */
 }
 
 form {
-    max-width: 35vw;
+    max-width: 50vw;
+    width: 50%;
     margin: auto;
 }
 
@@ -101,6 +104,7 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form textarea {
+    box-sizing: border-box;
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -113,6 +117,7 @@ form textarea {
 }
 
 .button-24 {
+    width: 100%;
     background: #FF4742;
     border: 1px solid #FF4742;
     border-radius: 6px;
