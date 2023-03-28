@@ -57,14 +57,9 @@ nav ul li a {
 #container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     height: 100vh;
     max-width: 100vw;
-}
-
-@media (max-width: 600px){
-    #container {
-        flex-direction: column;
-    }
 }
 
 .items {
@@ -83,7 +78,7 @@ nav ul li a {
 }
 
 .mainImage {
-    width: 100%;
+    max-width: 100%;
     height: 100vh;
     object-fit: cover;
 }
@@ -253,4 +248,13 @@ form textarea {
 
 .socials:nth-of-type(3)::before {
     content: '\f16d';
+}
+
+@media (max-width: 600px){
+    #container {
+        flex-direction: column;
+    }
+    .mainImage {
+        max-height: 60vh;
+    }
 }
