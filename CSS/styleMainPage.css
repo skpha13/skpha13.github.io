@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
 
+:root {
+    --text-color: #212120;
+    --dark_color: #424240;
+    --background_color: #E8E6E2;
+    --important_color: #FF2A3B;
+    --highlight_color: #87E8DD;
+    --light_color: #FFFFFF;
+}
+
 html {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    background-color: var(--background_color);
 }
 
 body {
@@ -15,7 +25,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: var(--dark_color);
     /* background-color: rgba(0, 0, 0, 0.5); */
     z-index: 1;
 }
@@ -39,15 +49,22 @@ nav ul li:first-child {
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--light_color);
     text-decoration: none;
     font-size: 16px;
 }
 
 #container {
     display: flex;
+    flex-direction: row;
     height: 100vh;
     max-width: 100vw;
+}
+
+@media (max-width: 600px){
+    #container {
+        flex-direction: column;
+    }
 }
 
 .items {
@@ -73,8 +90,9 @@ nav ul li a {
 
 #about,
 #contact {
+    color: var(--text-color);
     margin: 0;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
     padding: 50px;
 }
 
@@ -86,6 +104,7 @@ nav ul li a {
 
 form {
     max-width: 50vw;
+    min-width: 225px;
     width: 50%;
     margin: auto;
 }
@@ -118,12 +137,12 @@ form textarea {
 
 .button-24 {
     width: 100%;
-    background: #FF4742;
-    border: 1px solid #FF4742;
+    background: var(--important_color);
+    border: 1px solid var(--important_color);
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: var(--light_color);
     cursor: pointer;
     display: inline-block;
     font-family: 'Poppins', sans-serif;
@@ -146,7 +165,7 @@ form textarea {
 .button-24:active {
     background-color: initial;
     background-position: 0 0;
-    color: #FF4742;
+    color: var(--important_color);
 }
 
 .button-24:active {
@@ -164,7 +183,7 @@ form textarea {
 
 .socials {
     color:#fff;
-    background: #DB6E82;
+    background: var(--important_color);
     border-radius:4px;
     text-align:center;
     text-decoration:none;
@@ -183,11 +202,11 @@ form textarea {
 }
 
 .socials:hover {
-    background: #ef92a3;
+    background: #ff6d79;
 }
 
 .socials span {
-    color:#666;
+    color: var(--dark_color);
     position: absolute;
     font-family:sans-serif;
     bottom:0;
@@ -197,7 +216,7 @@ form textarea {
     z-index:-1;
     font-size:14px;
     border-radius:2px;
-    background:#fff;
+    background: var(--light_color);
     visibility:hidden;
     opacity:0;
     -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -212,7 +231,7 @@ form textarea {
     height: 0; 
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
+    border-top: 5px solid var(--light_color);
     position:absolute;
     bottom:-5px;
     left:40px;
@@ -225,7 +244,7 @@ form textarea {
 }
 
 .socials:nth-of-type(1)::before {
-    content: '\f113';
+    content: '\f09b';
 }
 
 .socials:nth-of-type(2)::before {
