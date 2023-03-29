@@ -91,6 +91,58 @@ nav ul li a {
     padding: 50px;
 }
 
+#about h1,
+#contact h1 {
+    font-size: 42px;
+}
+
+.text-anim-1 {
+    font-size: 24px;
+    font-weight: bold;
+    /* transform: translateX(-80px); */
+}
+
+.text-anim-1 h2 {
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+}
+
+.text-anim-1 h2 .word {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+}
+
+.text-anim-1 h2 .word .letter {
+    transform-origin: center center 25px;
+}
+
+.text-anim-1 h2 .word .letter.out {
+    transform: rotateX(90deg);
+    transition: o.32s cubic-bezier(0.6, 0.7, 0.2);
+}
+
+.text-anim-1  h2 .word .letter.in {
+    transform: 0.38s ease;
+}
+
+.text-anim-1 h2 .word .letter.behind {
+    transform: rotateX(-90deg);
+}
+
+.w-1 {
+    color: var(--dark_color);
+}
+
+.w-2 {
+    color: var(--highlight_color);
+}
+
+.w-3 {
+    color: var(--important_color);
+}
+
 #contact {
     display: grid;
     place-items: center;
