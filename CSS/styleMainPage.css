@@ -324,4 +324,14 @@ form textarea {
     h1 {
         font-size: 1rem;
     }
+
+    .text-anim-1 h2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #text {
+        margin-bottom: 15%;
+    }
+
 }
