@@ -13,6 +13,7 @@ html {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     background-color: var(--background_color);
+    font-size: 16px;
 }
 
 body {
@@ -36,7 +37,8 @@ nav ul {
     margin: 0;
     padding: 10px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    /* justify-content: end; */
 }
 
 nav ul li {
@@ -51,7 +53,6 @@ nav ul li:first-child {
 nav ul li a {
     color: var(--light_color);
     text-decoration: none;
-    font-size: 16px;
 }
 
 #container {
@@ -93,13 +94,13 @@ nav ul li a {
 
 #about h1,
 #contact h1 {
-    font-size: 42px;
+    font-size: 2.6rem;
 }
 
 .text-anim-1 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--text-color);
 }
 
@@ -159,7 +160,7 @@ form {
 
 h1 {
     text-align: center;
-    font-size: 36px;
+    font-size: 2rem;
     margin-top: 0;
 }
 
@@ -194,7 +195,6 @@ form textarea {
     cursor: pointer;
     display: inline-block;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
     font-weight: 900;
     line-height: 16px;
     min-height: 40px;
@@ -262,7 +262,7 @@ form textarea {
     right: -25px;
     padding: 5px 7px;
     z-index: -1;
-    font-size: 14px;
+    font-size: 0.9rem;
     border-radius: 2px;
     background: var(--light_color);
     visibility: hidden;
@@ -310,5 +310,18 @@ form textarea {
 
     .mainImage {
         max-height: 60vh;
+    }
+
+    #about h1,
+    #contact h1 {
+        font-size: 1.75rem;
+    }
+
+    .text-anim-1 {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1rem;
     }
 }
