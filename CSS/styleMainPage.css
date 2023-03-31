@@ -38,7 +38,22 @@ body {
     padding: 0;
     list-style: none;
     overflow: hidden;
+    position: relative;
     background-color: var(--dark_color);
+}
+
+.header ul ul {
+    display: none;
+}
+
+.header ul li:hover > ul {
+    display: inherit;
+}
+
+.header ul ul li {
+    float: none;
+    display: list-item;
+    position: relative;
 }
 
 .header li a {
