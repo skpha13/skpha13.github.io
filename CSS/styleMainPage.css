@@ -21,6 +21,10 @@ body {
     padding: 0;
 }
 
+.text-color {
+    color: var(--important_color);
+}
+
 .header {
     background-color: var(--dark_color);
     position: fixed;
@@ -176,6 +180,39 @@ body {
     display: grid;
     place-items: center;
     /* text-align: center; */
+}
+
+.card-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+
+.card-box {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: 28px;
+    background-color: var(--dark_color);
+}
+
+.card-box img {
+    max-width: 15%;
+    border-right: 3px solid var(--important_color);
+    margin: 10px;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.card-box p {
+    color: var(--light_color);
+    padding: 10px;
 }
 
 form {
