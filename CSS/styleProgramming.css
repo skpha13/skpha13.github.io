@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
 
 :root {
-    --text-color: #212120;
-    --background_color: #424240;
-    --important_color: #FF2A3B;
-    --highlight_color: #87E8DD;
+    --text-color: #D1D7E0;
+    --background_color: #2b2a31;
+    --important_color: #b32fff;
+    --accent_color: #564F6F;
+    --accent_dark_color: #4C495D;
 }
 
 html {
@@ -12,19 +13,21 @@ html {
     scroll-behavior: smooth;
     background-color: var(--background_color);
     font-size: 16px;
+    
 }
 
 body {
     margin: 0;
-    padding: 0;
+    color: var(--text-color);
 }
 
-.skills-container {
+.skills-container,
+.projects {
     padding: 50px;
 }
 
 h1 {
     text-align: center;
-    color: var(--text-color);
+    color: var(--important_color);
 }
 
