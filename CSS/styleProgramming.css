@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
 
 :root {
-    --text-color: #D1D7E0;
-    --background_color: #2b2a31;
-    --important_color: #b32fff;
+    --text-color: #fdfdff;
+    --background_color: #232323;
+    --important_color: #814fff;
     --accent_color: #564F6F;
     --accent_dark_color: #4C495D;
 }
@@ -25,6 +25,109 @@ body {
 .projects {
     padding: 50px;
 }
+
+.skills-container ul {
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* list-style-type: none; */
+}
+
+.skills-container ul li {
+    padding: 20px;
+    width: 25%;
+    position: relative;
+    vertical-align: middle;
+}
+
+.skills-container ul li::marker {
+    color: var(--important_color);
+}
+
+.progress-bar {
+    background-color: var(--accent_dark_color);
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar div {
+    height: 10px;
+    width: 0%;
+    border-radius: 5px;
+    background: var(--important_color);
+}
+
+.c {
+    animation: c 1s linear forwards;
+}
+
+.python {
+    animation: python 1s linear forwards;
+}
+
+.ht {
+    animation: ht 1s linear forwards;
+}
+
+.css {
+    animation: css 1s linear forwards;
+}
+
+.java {
+    animation: java 1s linear forwards;
+}
+
+.assembly {
+    animation: assembly 1s linear forwards;
+}
+
+.prolog {
+    animation: prolog 1s linear forwards;
+}
+
+@keyframes c {
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes python {
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes ht {
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes css {
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes java {
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes assembly {
+    100% {
+        width: 60%;
+    }    
+}
+
+@keyframes prolog {
+    100% {
+        width: 30%;
+    }
+}
+
 
 h1 {
     text-align: center;
