@@ -2,17 +2,15 @@
 
 :root {
     --text-color: #212120;
-    --dark_color: #424240;
-    --background_color: #E8E6E2;
+    --background_color: #424240;
     --important_color: #FF2A3B;
     --highlight_color: #87E8DD;
-    --light_color: #FFFFFF;
 }
 
 html {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
-    background-color: var(--dark_color);
+    background-color: var(--background_color);
     font-size: 16px;
 }
 
@@ -21,6 +19,12 @@ body {
     padding: 0;
 }
 
-h1 {
-    color: #bd60e2;
+.skills-container {
+    padding: 50px;
 }
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+
