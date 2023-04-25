@@ -205,3 +205,9 @@ h1 {
     max-width: 80%;
     margin: .3rem 0 1rem;
 }
+
+@media (max-width: 1000px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
