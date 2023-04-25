@@ -4,7 +4,7 @@
     --text-color: #fdfdff;
     --background_color: #232323;
     --important_color: #814fff;
-    --accent_color: #564F6F;
+    --accent_color: #35F29A;
     --accent_dark_color: #4C495D;
 }
 
@@ -21,6 +21,11 @@ body {
     color: var(--text-color);
 }
 
+h1 {
+    text-align: center;
+    color: var(--important_color);
+}
+
 .skills-container,
 .projects {
     padding: 50px;
@@ -30,12 +35,11 @@ body {
     padding-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    /* list-style-type: none; */
+    justify-content: flex-start;
 }
 
 .skills-container ul li {
-    padding: 20px;
+    margin: 20px;
     width: 25%;
     position: relative;
     vertical-align: middle;
@@ -49,13 +53,14 @@ body {
     background-color: var(--accent_dark_color);
     height: 10px;
     border-radius: 5px;
+    transform: translateY(10px);
 }
 
 .progress-bar div {
     height: 10px;
     width: 0%;
     border-radius: 5px;
-    background: var(--important_color);
+    background: var(--accent_color);
 }
 
 .c {
@@ -64,6 +69,10 @@ body {
 
 .python {
     animation: python 1s linear forwards;
+}
+
+.csharp {
+    animation: csharp 1s linear forwards;
 }
 
 .ht {
@@ -98,6 +107,12 @@ body {
     }
 }
 
+@keyframes csharp {
+    100% {
+        width: 75%;
+    }
+}
+
 @keyframes ht {
     100% {
         width: 100%;
@@ -128,9 +143,65 @@ body {
     }
 }
 
-
-h1 {
-    text-align: center;
-    color: var(--important_color);
+.projects {
+    background: var(--accent_dark_color);
 }
 
+.projects h1 {
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.portfolio-container .portfolio-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--background_color);
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img {
+    max-width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layers {
+    max-height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1),var(--accent_color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transform:  translateY(100%);
+    transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layers {
+    transform:  translateY(0);
+}
+
+.portfolio-layers h3 {
+    max-width: 80%;
+}
+
+.portfolio-layers p {
+    max-width: 80%;
+    margin: .3rem 0 1rem;
+}
