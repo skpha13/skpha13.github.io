@@ -64,35 +64,35 @@ h1 {
 }
 
 .c {
-    animation: c 1s linear forwards;
+    animation: c 1s ease-in-out forwards;
 }
 
 .python {
-    animation: python 1s linear forwards;
+    animation: python 1s ease-in-out forwards;
 }
 
 .csharp {
-    animation: csharp 1s linear forwards;
+    animation: csharp 1s ease-in-out forwards;
 }
 
 .ht {
-    animation: ht 1s linear forwards;
+    animation: ht 1s ease-in-out forwards;
 }
 
 .css {
-    animation: css 1s linear forwards;
+    animation: css 1s ease-in-out forwards;
 }
 
 .java {
-    animation: java 1s linear forwards;
+    animation: java 1s ease-in-out forwards;
 }
 
 .assembly {
-    animation: assembly 1s linear forwards;
+    animation: assembly 1s ease-in-out forwards;
 }
 
 .prolog {
-    animation: prolog 1s linear forwards;
+    animation: prolog 1s ease-in-out forwards;
 }
 
 @keyframes c {
@@ -217,5 +217,13 @@ h1 {
 @media (max-width: 600px) {
     .portfolio-container {
         grid-template-columns: 1fr;
+    }
+
+    .portfolio-box .portfolio-layers {
+        transform: translateY(0%);
+    }
+
+    .skills-container ul li {
+        width: 40%;
     }
 }
