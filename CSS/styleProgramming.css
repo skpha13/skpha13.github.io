@@ -143,10 +143,6 @@ h1 {
     }
 }
 
-.projects {
-    background: var(--accent_dark_color);
-}
-
 .projects h1 {
     margin-bottom: 4rem;
 }
@@ -206,8 +202,20 @@ h1 {
     margin: .3rem 0 1rem;
 }
 
+#background {
+    font-weight: 700;
+    background-color: var(--text-color);
+    color: var(--background_color);
+}
+
 @media (max-width: 1000px) {
     .portfolio-container {
         grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
     }
 }
