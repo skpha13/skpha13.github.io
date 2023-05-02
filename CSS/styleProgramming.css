@@ -147,6 +147,10 @@ h1 {
     margin-bottom: 4rem;
 }
 
+.projects span {
+    color: var(--text-color);
+}
+
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -160,6 +164,7 @@ h1 {
     box-shadow: 0 0 1rem var(--background_color);
     overflow: hidden;
     display: flex;
+    cursor: pointer;
 }
 
 .portfolio-box img {
@@ -206,6 +211,53 @@ h1 {
     font-weight: 700;
     background-color: var(--text-color);
     color: var(--background_color);
+}
+
+.cv span {
+    color: var(--text-color);
+}
+
+.cv a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.button-24 {
+    /* width: 100%; */
+    text-align: center;
+    background: var(--important_color);
+    border: 1px solid var(--important_color);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: var(--light_color);
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: var(--important_color);
+}
+
+.button-24:active {
+    opacity: .5;
 }
 
 @media (max-width: 1000px) {
