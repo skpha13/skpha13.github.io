@@ -231,7 +231,7 @@ h1 {
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     box-sizing: border-box;
-    color: var(--light_color);
+    color: var(--text-color);
     cursor: pointer;
     display: inline-block;
     font-family: 'Poppins', sans-serif;
