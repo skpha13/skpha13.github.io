@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
 
+@font-face {
+    font-family: 'Sketched';
+    src: url('../Fonts/Sketched.ttf') format('truetype');
+}
+
 :root {
-    --text-color: #212120;
-    --dark_color: #424240;
-    --background_color: #E8E6E2;
-    --important_color: #FF2A3B;
-    --highlight_color: #87E8DD;
+    --text-color: #FFFFFF;
+    --dark_color: #212121;
+    --background_color: #212121;
+    --important_color: #FFE715;
+    --highlight_color: #FFE715;
     --light_color: #FFFFFF;
 }
 
@@ -17,6 +22,27 @@ html {
 }
 
 body {
+    color: var(--text-color);
     margin: 0;
-    padding: 0;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Sketched';
+    font-size: 64px;
+}
+
+.invert {
+    -webkit-filter: invert(100%);
+}
+
+#my-heading span {
+    display: inline-block;
+    animation-name: shake;
+    animation-duration: 1s;
+    animation-timing-function: steps(1);
+    animation-iteration-count: infinite;
+    padding-right: 10px;
+    color: var(--highlight_color);
 }
