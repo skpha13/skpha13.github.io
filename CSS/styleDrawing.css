@@ -9,7 +9,7 @@
     --text-color: #FFFFFF;
     --dark_color: #212121;
     --background_color: #212121;
-    --important_color: #FFE715;
+    --important_color: #A751FF;
     --highlight_color: #FFE715;
     --light_color: #FFFFFF;
 }
@@ -34,11 +34,16 @@ h1 {
     margin: 50px;
 }
 
-h2 {
+* h2 {
+    color: var(--important_color);
     text-align: center;
     font-family: 'Sketched';
-    font-size: 32px;
+    font-size: 48px;
     margin-bottom: 50px;
+}
+
+#text {
+    margin-top: 100px;
 }
 
 #spacing {
@@ -158,19 +163,65 @@ h2 {
     grid-column-end: 8;
 }
 
+.grid-item13 {
+    grid-row-start: 11;
+    grid-row-end: 14;
+    grid-column-start: 5;
+    grid-column-end: 9;
+}
+
+.grid-item14 {
+    grid-row-start: 14;
+    grid-row-end: 17;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.grid-item15 {
+    grid-row-start: 11;
+    grid-row-end: 12;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.grid-item16 {
+    grid-row-start: 14;
+    grid-row-end: 16;
+    grid-column-start: 5;
+    grid-column-end: 9;
+}
+
+.description {
+    margin: 45px;
+    padding: 25px;
+    border: solid white;
+    border-color: var(--important_color);
+    border-radius: 20px;
+}
+
 @media (max-width: 800px) {
     h1 {
-        font-size: 48px;
+        font-size: 52px;
     }
 
     h2 {
-        font-size: 30px;
+        font-size: 34px;
     }
 }
 
 @media (max-width: 600px) {
     h1 {
         font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 28px;
     }
 
     h2 {
