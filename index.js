@@ -29,7 +29,7 @@ oauth2Client.setCredentials({
 const accessToken = oauth2Client.getAccessToken();
 
 app.post('/contact', (req, res) => {
-    const { name, email, subject, message } = req.body;
+    const { name, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -58,10 +58,10 @@ app.post('/contact', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log('Email failed');
-            res.json({ status: 'error', message: 'Failed to send email' });
+            res.status(500).json({ status: 'error', message: 'Failed to send email' });
         } else {
             console.log('Email sent: ' + info.response);
-            res.json({ status: 'success', message: 'Email sent successfully' });
+            res.status(200).json({ status: 'success', message: 'Email sent successfully' });
         }
     });
 });
