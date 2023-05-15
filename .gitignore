@@ -2432,3 +2432,13 @@ node_modules/yallist/LICENSE
 node_modules/yallist/package.json
 node_modules/yallist/README.md
 node_modules/yallist/yallist.js
+node_modules/cors/CONTRIBUTING.md
+node_modules/cors/HISTORY.md
+node_modules/cors/lib/index.js
+node_modules/cors/LICENSE
+node_modules/cors/package.json
+node_modules/cors/README.md
+node_modules/object-assign/index.js
+node_modules/object-assign/license
+node_modules/object-assign/package.json
+node_modules/object-assign/readme.md
