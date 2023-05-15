@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const multer = require('multer');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
@@ -10,7 +11,12 @@ const OAuth2 = google.auth.OAuth2;
 const app = express();
 
 app.use(cors());
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "")));
 
 app.get('/', (req, res) => {
@@ -28,7 +34,7 @@ oauth2Client.setCredentials({
 });
 const accessToken = oauth2Client.getAccessToken();
 
-app.post('/contact', (req, res) => {
+app.post('/contact', upload.none(), (req, res) => {
     const { name, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
