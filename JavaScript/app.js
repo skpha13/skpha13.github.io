@@ -1,7 +1,18 @@
 const form = document.querySelector('form');
 
+if(localStorage.getItem('name') != null) {
+    form.name.value = localStorage.getItem('name');
+}
+
+if(localStorage.getItem('email') != null) {
+    form.email.value = localStorage.getItem('email');
+}
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    localStorage.setItem('name', form.name.value);
+    localStorage.setItem('email', form.email.value);
 
     const formData = new FormData(form);
 
