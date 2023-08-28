@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+:root {
+    --text-color: #212120;
+    --dark_color: #424240;
+    --background_color: #E8E6E2;
+    --important_color: #FF2A3B;
+    --highlight_color: #87E8DD;
+    --light_color: #FFFFFF;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--background_color);
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.text-color {
+    color: var(--important_color);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: var(--dark_color);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: var(--light_color);
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--light_color);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--light_color);
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--light_color);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: var(--highlight_color);
+    font-size: 12px;
+}
+
+button {
+    background: none;
+    border: none;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--highlight_color);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+button:hover {
+    background: var(--highlight_color);
+    color: var(--highlight_color);
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--highlight_color),
+        0 0 25px var(--highlight_color),
+        0 0 50px var(--highlight_color),
+        0 0 100px var(--highlight_color);
+}
+
+@media (max-width: 600px) {
+    #container {
+        flex-direction: column;
+    }
+
+    .mainImage {
+        max-height: 60vh;
+    }
+
+    #about h1,
+    #contact h1 {
+        font-size: 1.75rem;
+    }
+
+    .text-anim-1 {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .text-anim-1 h2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #text {
+        margin-bottom: 15%;
+    }
+
+}

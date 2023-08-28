@@ -22,11 +22,6 @@ app.use(express.static(path.join(__dirname, "")));
 
 app.set('view engine', 'ejs');
 
-app.use((req, res) => {
-    res.status(404).render('404');
-    //res.status(404).sendFile(path.join(__dirname, './404.html'));
-});
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
@@ -35,15 +30,18 @@ app.get('/login', (req, res) => {
     res.render('notloggedin');
 });
 
+app.get('/logout', (req, res) => {
+    res.redirect('/login');
+});
+
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    if (username === localStorage.getItem(username) && password === localStorage.getItem(password)) {
-        res.redirect('/index.html');
+
+    if (username === "admin" && password === "parola") {
+        res.status(200).redirect('/index.html');
     }
     else {
-        localStorage.setItem(username, username);
-        localStorage.setItem(password, password);
-        res.redirect('/notloggedin');
+        res.status(401).redirect('/login?error=1');
     }
 });
 
@@ -96,6 +94,11 @@ app.post('/contact', upload.none(), (req, res) => {
         }
     });
 
+});
+
+app.use((req, res) => {
+    res.status(404).render('404');
+    //res.status(404).sendFile(path.join(__dirname, './404.html'));
 });
 
 const port = 3000;
