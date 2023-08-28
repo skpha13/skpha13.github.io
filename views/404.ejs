@@ -10,9 +10,12 @@
   </head>
 
   <body>
+    <% for(let i=0; i<15; i++) { %>
+      <%- include('backgroundElementView.ejs', {index: i}) %>
+    <% } %>
     <div id="container">
-      <h1>404</h1>
-      <h4>Not found</h4>
+      <h1><span class="bordered-text">404</span></h1>
+      <h4><span class="bordered-text">Not found</span></h4>
     </div>
   </body>
 

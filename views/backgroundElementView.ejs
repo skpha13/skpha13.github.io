@@ -7,7 +7,9 @@
   </head>
 
 <div class="animation-container">
-    <div class="row">
-
+    <div class="<%= index % 2 === 0 ? 'rowEven' : 'rowOdd' %>">
+        <% for(let i=0; i<60; i++) { %>
+            <img src="../Images/cherry pal_boxed.svg">
+        <% } %>
     </div>
 </div>

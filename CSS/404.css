@@ -27,33 +27,141 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 10rem;
+    font-size: 15rem;
     margin-top: 0;
     margin-bottom: 0;
+    color: var(--background_color);
 }
 
 h4 {
     text-align: center;
-    font-size: 4rem;
+    font-size: 6rem;
     margin-top: 0;
     margin-bottom: 0;
+    color: var(--background_color);
+}
+
+.bordered-text {
+    -webkit-text-stroke: 2px var(--dark_color);
 }
 
 #container {
+    position: absolute;
+    top: 0;
+    left: 35vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    z-index: 2;
 }
 
-@media (max-width: 600px) {
+.animation-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.rowEven {
+    display: flex;
+    animation: moveRowLeft 20s linear infinite;
+}
+
+.rowOdd {
+    display: flex;
+    animation: moveRowRight 20s linear infinite;
+}
+
+.rowEven img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 25px;
+    opacity: 15%;
+}
+
+.rowOdd img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 25px;
+    opacity: 15%;
+}
+
+@keyframes moveRowLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes moveRowRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        left: 10vw;
+    }
+
     h1 {
         font-size: 5rem;
     }
 
     h4 {
         font-size: 2rem;
+    }
+}
+
+
+@media (min-width:501px) and (max-width: 750px) {
+    .container {
+        left: 10vw;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+    }
+}
+
+
+@media (min-width:751px) and (max-width: 1000px) {
+    .container {
+        left: 20vw;
+    }
+
+    h1 {
+        font-size: 10rem;
+    }
+
+    h4 {
+        font-size: 4rem;
     }
 }
