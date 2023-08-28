@@ -19,9 +19,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "")));
 
+app.use((req, res) => {
+    res.status(404).render('404');
+    //res.status(404).sendFile(path.join(__dirname, './404.html'));
+});
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
+
+app.set('view engine', 'ejs');
 
 const oauth2Client = new OAuth2(
     process.env.CLIENT_ID,
@@ -62,6 +69,7 @@ app.post('/contact', upload.none(), (req, res) => {
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
+        console.log(error);
         if (error) {
             console.log('Email failed');
             res.status(500).json({ status: 'error', message: 'Failed to send email' });
@@ -70,6 +78,7 @@ app.post('/contact', upload.none(), (req, res) => {
             res.status(200).json({ status: 'success', message: 'Email sent successfully' });
         }
     });
+
 });
 
 const port = 3000;
