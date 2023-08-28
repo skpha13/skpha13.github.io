@@ -8,10 +8,17 @@ const path = require('path');
 const cors = require('cors');
 const { google } = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
+const session = require('express-session');
 
 const app = express();
 
 app.use(cors());
+
+app.use(session({
+    secret: 'secret-key',
+    resave: false,
+    saveUninitialized: true
+}));
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
@@ -30,19 +37,28 @@ app.get('/login', (req, res) => {
     res.render('notloggedin');
 });
 
-app.get('/logout', (req, res) => {
-    res.redirect('/login');
-});
-
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
     if (username === "admin" && password === "parola") {
+        req.session.loggedIn = true;
+        req.session.loginError = undefined;
         res.status(200).redirect('/index.html');
     }
     else {
+        req.session.loggedIn = false;
+        req.session.loginError = "Invalid username or password";
         res.status(401).redirect('/login?error=1');
     }
+});
+
+app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.log('Error destroying session:', err);
+        }
+        res.redirect('/login');
+    });
 });
 
 const oauth2Client = new OAuth2(
