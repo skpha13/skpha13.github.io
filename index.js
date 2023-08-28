@@ -8,6 +8,7 @@ const path = require('path');
 const cors = require('cors');
 const { google } = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
+
 const app = express();
 
 app.use(cors());
@@ -19,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "")));
 
+app.set('view engine', 'ejs');
+
 app.use((req, res) => {
     res.status(404).render('404');
     //res.status(404).sendFile(path.join(__dirname, './404.html'));
@@ -28,7 +31,21 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
 
-app.set('view engine', 'ejs');
+app.get('/login', (req, res) => {
+    res.render('notloggedin');
+});
+
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    if (username === localStorage.getItem(username) && password === localStorage.getItem(password)) {
+        res.redirect('/index.html');
+    }
+    else {
+        localStorage.setItem(username, username);
+        localStorage.setItem(password, password);
+        res.redirect('/notloggedin');
+    }
+});
 
 const oauth2Client = new OAuth2(
     process.env.CLIENT_ID,
