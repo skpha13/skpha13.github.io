@@ -72,8 +72,15 @@ oauth2Client.setCredentials({
 });
 const accessToken = oauth2Client.getAccessToken();
 
+// Email validation regex
+const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
 app.post('/contact', upload.none(), (req, res) => {
     const { name, email, message } = req.body;
+
+    if (!emailRegex.test(email)) {
+        res.status(500).json({ status: 'error', message: 'Invalid email' });
+    }
 
     const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -100,7 +107,6 @@ app.post('/contact', upload.none(), (req, res) => {
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
-        console.log(error);
         if (error) {
             console.log('Email failed');
             res.status(500).json({ status: 'error', message: 'Failed to send email' });
@@ -109,7 +115,6 @@ app.post('/contact', upload.none(), (req, res) => {
             res.status(200).json({ status: 'success', message: 'Email sent successfully' });
         }
     });
-
 });
 
 app.use((req, res) => {
